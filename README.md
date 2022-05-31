@@ -1,24 +1,63 @@
-# README
+# Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a Blog web app that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+## Built With
 
-Things you may want to cover:
+  - Ruby
+  - Ruby on Rails
+  - RSpec
+  - PostgreSQL
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+- To get a local copy up and running follow these simple example steps:
 
-* Configuration
+### Prerequisites
 
-* Database creation
+  - Ruby
+  - Node.js
+  - PostgreSQL
+  - Rails
 
-* Database initialization
+### Setup
 
-* How to run the test suite
+- Clone the repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+  $ `git clone https://github.com/ryxtor/blog-app.git`
 
-* Deployment instructions
+  $ `cd blog-app`
 
-* ...
+- Create the databases:
+  
+  $ `rake db:create`
+
+- Run the code:
+  
+  $ `rails s`
+  
+## Author
+
+|    👤    | **Lucas Bonnefon**                                             |
+| ------------ | ----------------------------------------------------        |
+| **GitHub**   | [@ryxtor](https://github.com/ryxtor)                |
+| **Twitter**  | [@ryxtor](https://twitter.com/ryxtor)              |
+| **LinkedIn** | [Lucas Bonnefon](https://www.linkedin.com/in/lucasbonnefon/)|
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Ruby docs](https://ruby-doc.org)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
