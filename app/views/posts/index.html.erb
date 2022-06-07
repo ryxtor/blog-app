@@ -1,1 +1,21 @@
 <p>Here is a list of all the posts:</p>
+<div>
+  <img src='<%= @user.photo %>' alt='user-photo'>
+  <%= link_to @user.name %>
+  <p>Posts: <%= @user.posts_counter || 0 %></p>
+</div>
+
+<div>
+  <% @user.posts.each do |post| %>
+  <div>
+    <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id) %>
+    <p><%= post.short_text %></p>
+    <p>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+  </div>
+  <div>
+    <% post.most_recent_comments.each do |comment| %>
+    <li><%= comment.user.name %>: <%= comment.text %></li>
+    <% end %>
+  </div>
+  <% end %>
+</div>
