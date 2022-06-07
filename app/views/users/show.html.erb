@@ -1,1 +1,19 @@
 <p>Here is a single user:</p>
+<div>
+  <img src='<%= @user.photo %>' alt='user-photo'>
+  <%= link_to @user.name %>
+  <p>Posts: <%= @user.posts_counter || 0 %></p>
+</div>
+<p>Bio: <%= @user.bio %></p>
+
+<div>
+  <% @user.most_recent_posts.each do |post| %>
+  <div>
+    <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id) %>
+    <p><%= post.short_text %></p>
+    <p>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to 'See all posts', user_posts_path(user_id: @user.id) %>
