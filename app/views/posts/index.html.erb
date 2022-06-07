@@ -1,21 +1,25 @@
-<p>Here is a list of all the posts:</p>
-<div>
-  <img src='<%= @user.photo %>' alt='user-photo'>
-  <%= link_to @user.name %>
-  <p>Posts: <%= @user.posts_counter || 0 %></p>
-</div>
-
-<div>
-  <% @user.posts.each do |post| %>
-  <div>
-    <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id) %>
-    <p><%= post.short_text %></p>
-    <p>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+<div class='index'>
+  <div class='user'>
+    <img class="user-image black-border" src='<%= @user.photo %>' alt='user-photo'>
+    <div class="user-data black-border">
+      <%= link_to @user.name, user_path(id: @user.id), class: 'user-index-name' %>
+      <p class="user-index-posts">Posts: <%= @user.posts_counter || 0 %></p>
+    </div>
   </div>
-  <div>
-    <% post.most_recent_comments.each do |comment| %>
-    <li><%= comment.user.name %>: <%= comment.text %></li>
+
+  <div class="user-posts">
+    <% @user.posts.each do |post| %>
+    <div class="user-bio black-border">
+      <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id), class: 'section-title' %>
+      <p><%= post.short_text %></p>
+      <p class="post-counters">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+    </div>
+
+    <ul class="post-comments black-border">
+      <% post.most_recent_comments.each do |comment| %>
+      <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
+      <% end %>
+    </ul>
     <% end %>
   </div>
-  <% end %>
 </div>

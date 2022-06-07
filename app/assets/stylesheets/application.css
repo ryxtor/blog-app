@@ -13,3 +13,92 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.user {
+  display: flex;
+  margin: 0.5rem 1rem;
+}
+
+.black-border {
+  border: 2px solid black;
+}
+
+.user-image {
+  width: 7rem;
+  height: 7rem;
+}
+
+.user-data {
+  margin-left: 1rem;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-index-name {
+  font-size: 3rem;
+  margin-left: 1rem;
+  align-self: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.user-index-posts {
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+
+.user-bio {
+  margin: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.post-counters {
+  margin: 0 1rem;
+  text-align: right;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.posts-btn {
+  color: #000;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.post-comments {
+  margin: 0 1rem;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.comment {
+  margin: 0.2rem 1rem;
+}
+
+.post {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.post-detailed {
+  display: flex;
+  justify-content: space-between;
+}
