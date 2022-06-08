@@ -6,6 +6,12 @@
 
   <p><%= @post.text %></p>
 </div>
+<div class="post black-border">
+  <%= form_with url: comments_url, scope: :comment do |f| %>
+    <%= f.text_area :text, placeholder: 'Write a comment...' %>
+    <%= f.submit "Add comment" %> 
+  <% end %> 
+</div>
 <ul class="post-comments black-border">
   <% @post.comments.each do |comment| %>
     <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
