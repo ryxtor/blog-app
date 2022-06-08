@@ -16,4 +16,8 @@ class Post < ActiveRecord::Base
   def short_text
     text.truncate(75)
   end
+
+  def liked?(user)
+    likes.where(user_id: user.id).any?
+  end
 end
