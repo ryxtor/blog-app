@@ -1,1 +1,17 @@
-<p>Here is a list of all the posts:</p>
+<%= render 'users/user' %>
+
+<div class="user-posts">
+  <% @user.posts.each do |post| %>
+  <div class="user-bio black-border">
+    <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id), class: 'section-title' %>
+    <p><%= post.short_text %></p>
+    <p class="post-counters">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+  </div>
+
+  <ul class="post-comments black-border">
+    <% post.most_recent_comments.each do |comment| %>
+    <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>

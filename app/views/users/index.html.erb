@@ -1,1 +1,11 @@
-<p>Here is a list of all the users:</p>
+  <% @users.each do |user| %>
+    <div class='user'>
+      <img class="user-image black-border" src='<%= user.photo %>' alt='user-photo'>
+      <div class="user-data black-border">
+      <p>
+        <%= link_to user.name, user_path(id: user.id), class: 'user-index-name' %>
+      </p>
+      <p class="user-index-posts">Posts: <%= user.posts_counter || 0 %></p>
+      </div>
+    </div>
+  <% end %>

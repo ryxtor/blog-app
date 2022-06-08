@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
   def most_recent_comments
     comments.limit(5).order(created_at: :desc)
   end
+
+  def short_text
+    text.truncate(75)
+  end
 end
