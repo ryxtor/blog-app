@@ -1,25 +1,17 @@
-<div class='index'>
-  <div class='user'>
-    <img class="user-image black-border" src='<%= @user.photo %>' alt='user-photo'>
-    <div class="user-data black-border">
-    <%= link_to @user.name, user_path(id: @user.id), class: 'user-index-name' %>
-    <p class="user-index-posts">Posts: <%= @user.posts_counter || 0 %></p>
-    </div>
-  </div>
+<%= render 'users/user' %>
 
-  <div class='user-bio black-border'>
-    <p>Bio: <%= @user.bio %></p>
-  </div>
-
-  <div class="user-posts">
-    <% @user.most_recent_posts.each do |post| %>
-    <div class="user-bio black-border">
-      <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id), class: 'section-title' %>
-      <p><%= post.short_text %></p>
-      <p class="post-counters">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></p>
-    </div>
-    <% end %>
-  </div>
-
-  <%= link_to 'See all posts', user_posts_path(user_id: @user.id), class: 'btn-container posts-btn black-border' %>
+<div class='user-bio black-border'>
+  <p>Bio: <%= @user.bio %></p>
 </div>
+
+<div class="user-posts">
+  <% @user.most_recent_posts.each do |post| %>
+  <div class="user-bio black-border">
+    <%= link_to post.title, user_post_path(user_id: @user.id, id: post.id), class: 'section-title' %>
+    <p><%= post.short_text %></p>
+    <p class="post-counters">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></p>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to 'See all posts', user_posts_path(user_id: @user.id), class: 'btn-container posts-btn black-border' %>
