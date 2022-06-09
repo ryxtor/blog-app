@@ -1,3 +1,6 @@
+<% flash.each do |type, msg| %>
+<%= content_tag :div, msg, class: "#{type} alert" %>
+<% end %>
 <div class="new-post-container">
 <h2 class="new-post-label">Create a new post:</h2>
 <%= form_with url: "/users/#{@user.id}/posts", scope: :post, class: 'new-post-form' do |f| %>

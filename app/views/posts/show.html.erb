@@ -1,3 +1,6 @@
+<% flash.each do |type, msg| %>
+<%= content_tag :div, msg, class: "#{type} alert" %>
+<% end %>
 <div class="post black-border">
   <div class="post-detailed">
     <h3> <%= @post.title %> by <%= @user.name %></h3>
