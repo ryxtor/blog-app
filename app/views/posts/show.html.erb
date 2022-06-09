@@ -5,6 +5,15 @@
   </div>
 
   <p><%= @post.text %></p>
+    <%= form_with url: "#{@post.id}/likes", method: :post do |f| %>
+      <%= f.submit "Like", class: 'like-btn' %>
+    <% end %>
+<div>
+  <%= form_with url: "#{@post.id}/comments", scope: :comment, method: :post, class: 'comment-form' do |f| %>
+    <%= f.text_area :text, placeholder: 'Write a comment...', required: true, class: 'comment-txt' %>
+    <%= f.submit "Add comment", class: 'comment-btn' %> 
+  <% end %> 
+</div>
 </div>
 <ul class="post-comments black-border">
   <% @post.comments.each do |comment| %>

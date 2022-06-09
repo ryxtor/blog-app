@@ -102,3 +102,61 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.like-btn {
+  color: #000;
+  background-color: #fff;
+  margin: 1rem 0;
+}
+
+.comment-txt {
+  resize: none;
+  width: 100%;
+  height: 3rem;
+  margin: 0;
+}
+
+.comment-btn {
+  color: #000;
+  background-color: #fff;
+  margin-left: 0.5rem;
+}
+
+.comment-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-btn-container {
+  margin: 1.5rem 1rem;
+}
+
+.new-post-btn {
+  color: #000;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.new-post-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.new-post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-post-label {
+  margin: 1rem;
+}
+
+.new-post-text {
+  height: 3rem;
+  margin: 0;
+  resize: vertical;
+}

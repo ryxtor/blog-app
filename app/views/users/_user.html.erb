@@ -5,3 +5,6 @@
     <p class="user-index-posts">Posts: <%= @user.posts_counter || 0 %></p>
   </div>
 </div>
+<div class="post-btn-container">
+<%= link_to 'New Post', new_user_post_path(user_id: @user.id), class: 'new-post-btn' %>
+</div>
