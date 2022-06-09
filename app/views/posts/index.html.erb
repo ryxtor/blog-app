@@ -10,7 +10,7 @@
   </div>
 
   <ul class="post-comments black-border">
-    <% post.most_recent_comments.each do |comment| %>
+    <% post.most_recent_comments.includes([:user]).each do |comment| %>
     <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
     <% end %>
   </ul>
