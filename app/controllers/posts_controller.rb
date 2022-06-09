@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @post = Post.new
   end
 
@@ -16,9 +17,11 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = current_user.posts.new(post_params)
     if @post.save
+      flash[:success] = 'Post created!'
       redirect_to user_post_path(@user, @post)
     else
-      render :new
+      flash[:error] = 'Post not created!'
+      redirect_to "/users/#{@user.id}/posts/new"
     end
   end
 
