@@ -19,7 +19,7 @@
 </div>
 </div>
 <ul class="post-comments black-border">
-  <% @post.comments.each do |comment| %>
+  <% @post.comments.includes([:user]).each do |comment| %>
     <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
   <% end %>
 </ul>
